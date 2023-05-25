@@ -15,9 +15,8 @@ const Faq = () => {
                   <Disclosure.Button className="flex items-center justify-between w-full px-4 py-4 text-lg text-left text-gray-800 rounded-lg bg-gray-50 hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-indigo-100 focus-visible:ring-opacity-75 dark:bg-trueGray-800 dark:text-gray-200">
                     <span>{item.question}</span>
                     <ChevronUpIcon
-                      className={`${
-                        open ? "transform rotate-180" : ""
-                      } w-5 h-5 text-indigo-500`}
+                      className={`${open ? "transform rotate-180" : ""
+                        } w-5 h-5 text-indigo-500`}
                     />
                   </Disclosure.Button>
                   <Disclosure.Panel className="px-4 pt-4 pb-2 text-gray-500 dark:text-gray-300">
@@ -35,23 +34,38 @@ const Faq = () => {
 
 const faqdata = [
   {
-    question: "Is this template completely free to use?",
-    answer: "Yes, this template is completely free to use.",
+    question: "What is BizTransact?",
+    answer: "BizTransact is an online platform designed to facilitate the seamless sale of businesses. We connect business owners who are looking to sell their ventures with qualified buyers seeking profitable opportunities, creating a bridge between them.",
   },
   {
-    question: "Can I use it in a commercial project?",
-    answer: "Yes, this you can.",
+    question: "Who is the target audience for BizTransact?",
+    answer: "Our target audience consists of business owners who are ready to transition out of their current ventures and buyers who are eager to acquire successful businesses. These individuals are typically seeking new opportunities for growth, expansion, or entry into specific industries. They value efficiency, reliability, and a trusted platform that simplifies the complex process of buying or selling a business.",
   },
   {
-    question: "What is your refund policy? ",
+    question: "What industries does BizTransact operate within?",
     answer:
-      "If you're unhappy with your purchase for any reason, email us within 90 days and we'll refund you in full, no questions asked.",
+      "BizTransact operates within various industries, catering to business owners and buyers across different sectors. Our platform is adaptable and can accommodate businesses from a wide range of industries, including but not limited to retail, hospitality, technology, manufacturing, and services.",
   },
   {
-    question: "Do you offer technical support? ",
+    question: "How does BizTransact ensure the security of transactions?",
     answer:
-      "No, we don't offer technical support for free downloads. Please purchase a support plan to get 6 months of support.",
+      "At BizTransact, we prioritize the security of transactions. We implement robust security measures, including encryption and secure data storage, to protect the confidentiality of information shared on our platform. We also verify the identity and qualifications of buyers to maintain a trusted environment.",
   },
+  {
+    question: " What is the process for selling a business on BizTransact?",
+    answer:
+      "To sell your business on BizTransact, you can start by filling out the form on our platform. Then, provide detailed information about your business, including financials, industry, location, and any other relevant details. We  will connect you with qualified buyers who are interested in your business. ",
+  },
+  {
+    question: " What is the process for buying a business on BizTransact?",
+    answer:
+      "To buy a business on BizTransact, you can start by filling out the form on our platform to receive emails of listed businesses on BizTransact. Show your interest by telling us a business you would like to acquire, and we'd connect you to the seller.",
+  },
+  {
+    question: "Can BizTransact assist with legal and financial aspects of business transactions?",
+    answer:
+      "While BizTransact provides a platform for connecting buyers and sellers, we do not directly provide legal or financial services. However, we can recommend trusted professionals or service providers who specialize in legal and financial aspects of business transactions, ensuring a smooth process for all parties involved.",
+  }
 ];
 
 export default Faq;
