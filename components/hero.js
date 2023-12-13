@@ -5,7 +5,7 @@ import heroImg from "../public/img/hero.png";
 
 const Hero = () => {
   const [product, setProduct] = useState('business');
-  const products = ['design', 'product'];
+  const products = ['design', 'product', 'business'];
   useEffect(() => {
     const changeProduct = () => {
       const randomProduct = products[Math.floor(Math.random() * products.length)];
@@ -34,7 +34,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener"
                 className="px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md ">
-                Click to buy/sell a {product}
+                Click to sell a {product}
               </a>
             </div>
           </div>
