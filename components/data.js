@@ -11,23 +11,32 @@ import benefitOneImg from "../public/img/benefit-one.png";
 import benefitTwoImg from "../public/img/benefit-two.png";
 
 const benefitOne = {
-  title: "Highlight your benefits",
-  desc: "You can use this space to highlight your first benefit or a feature of your product. It can also contain an image or Illustration like in the example along with some bullet points.",
+  title: "Bizlink's Benefits",
   image: benefitOneImg,
   bullets: [
     {
-      title: "Understand your customers",
-      desc: "Then explain the first point breifly in one or two lines.",
+      title: "Time Savings",
+      desc: "Streamlined processes and a user-friendly platform save time for both sellers and buyers in completing business transactions.",
       icon: <FaceSmileIcon />,
     },
     {
-      title: "Improve acquisition",
-      desc: "Here you can add the next benefit point.",
+      title: "Wider Reach",
+      desc: "Sellers can showcase their businesses to a broader audience, increasing the chances of finding suitable buyers.",
       icon: <ChartBarSquareIcon />,
     },
     {
-      title: "Drive customer retention",
-      desc: "This will be your last bullet point in this section.",
+      title: "Diverse Opportunities",
+      desc: "Buyers gain access to a diverse range of businesses, allowing them to explore various industries and investment opportunities.",
+      icon: <CursorArrowRaysIcon />,
+    },
+    {
+      title: "Verified Listings",
+      desc: "The platform's verification process ensures the accuracy of information, promoting transparency and building trust between parties.",
+      icon: <CursorArrowRaysIcon />,
+    },
+    {
+      title: "Reviews and Feedback",
+      desc: "A feedback system allows users to leave reviews, contributing to the credibility of sellers and the overall trustworthiness of the platform.",
       icon: <CursorArrowRaysIcon />,
     },
   ],
