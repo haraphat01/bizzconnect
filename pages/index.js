@@ -2,6 +2,7 @@ import Head from "next/head";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
+import Products from "../components/products";
 
 import { benefitOne } from "../components/data";
 import Video from "../components/video";
@@ -15,7 +16,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>BizTransact</title>
+        <title>Bizlink</title>
         <meta
           name="description"
           content="BizTransact is a dynamic online platform designed to facilitate the seamless sale of businesses."
@@ -24,14 +25,19 @@ const Home = () => {
       </Head>
 
       <Navbar />
-      <Hero />
-      <Benefits data={benefitOne} />
       
+      <Hero />
+      <SectionTitle
+        pretitle="Businesses for sale"
+        title=" Businesses available for sale">
+      </SectionTitle>
+    <Products/>
+      <Benefits data={benefitOne} />
+
       <SectionTitle
         pretitle="Testimonials"
-        title="Here's what our customers said">
-        Testimonails is a great way to increase the brand trust and awareness.
-        Use this section to highlight your popular customers.
+        title="Customer Success Stories">
+        Discover how BizTransact has empowered entrepreneurs and investors on their business journey. Here are inspiring stories from our users:
       </SectionTitle>
       <Testimonials />
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
