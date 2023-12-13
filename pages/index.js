@@ -19,7 +19,7 @@ const Home = () => {
         <title>Bizlink</title>
         <meta
           name="description"
-          content="BizTransact is a dynamic online platform designed to facilitate the seamless sale of businesses."
+          content="Bizlink is a dynamic online platform designed to facilitate the seamless sale of businesses."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -37,7 +37,7 @@ const Home = () => {
       <SectionTitle
         pretitle="Testimonials"
         title="Customer Success Stories">
-        Discover how BizTransact has empowered entrepreneurs and investors on their business journey. Here are inspiring stories from our users:
+        Discover how Bizlink has empowered entrepreneurs and investors on their business journey. Here are inspiring stories from our users:
       </SectionTitle>
       <Testimonials />
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">

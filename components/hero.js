@@ -26,7 +26,7 @@ const Hero = () => {
               Facilitate the seamless sale of your {product}.
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-              our platform serves as a bridge between business owners looking to sell their ventures and qualified buyers seeking profitable opportunities. By leveraging cutting-edge technology and a user-friendly interface, BizTransact streamlines the business transaction process, connecting passionate entrepreneurs and fostering economic growth.
+              our platform serves as a bridge between business owners looking to sell their ventures and qualified buyers seeking profitable opportunities. By leveraging cutting-edge technology and a user-friendly interface, Bizlink streamlines the business transaction process, connecting passionate entrepreneurs and fostering economic growth.
             </p>
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
               <a
@@ -34,7 +34,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener"
                 className="px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md ">
-                Contact us to buy/sell a business
+                Click to buy/sell a {product}
               </a>
             </div>
           </div>

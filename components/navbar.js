@@ -23,7 +23,7 @@ const Navbar = () => {
                     <span>
                      
                     </span>
-                    <span>BizTransact</span>
+                    <span>Bizlink</span>
                   </span>
                 </Link>
 

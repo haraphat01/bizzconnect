@@ -40,7 +40,7 @@ const Testimonials = () => {
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-2xl leading-normal ">
       
-              BizTransact's support team was <Mark>incredibly helpful</Mark>  throughout the process. Their guidance on documentation and quick responses to my inquiries made me feel supported and confident in my decision to buy a business through their platform.
+              Bizlink's support team was <Mark>incredibly helpful</Mark>  throughout the process. Their guidance on documentation and quick responses to my inquiries made me feel supported and confident in my decision to buy a business through their platform.
             </p>
 
             <Avatar
