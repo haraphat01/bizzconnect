@@ -12,41 +12,41 @@ const Testimonials = () => {
       <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
         <div className="lg:col-span-2 xl:col-auto">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-        
+
             <p className="text-2xl leading-normal">Bizlink made selling my business a <Mark>seamless </Mark> experience. The platform's user-friendly interface and efficient communication tools connected me with serious buyers, and the entire process was smooth and hassle-free.</p>
 
             <Avatar
               image={userOneImg}
-              name="Sarah Steiner"
-              title="VP Sales at Google"
+              name="John, "
+              title="Satisfied Business Seller"
             />
           </div>
         </div>
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-2xl leading-normal ">
-              Make sure you only pick the <Mark>right sentence</Mark>
-              to keep it short and simple.
+
+              As an investor, finding the <Mark>right business</Mark>  is crucial. Bizlink's matching algorithm not only simplified my search but also connected me with a business that perfectly aligned with my investment goals. It's a game-changer for anyone looking to invest wisely
             </p>
 
             <Avatar
               image={userTwoImg}
               name="Dylan Ambrose"
-              title="Lead marketer at Netflix"
+              title="Successful Investor"
             />
           </div>
         </div>
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-2xl leading-normal ">
-              This is an <Mark>awesome</Mark> landing page template I&apos;ve seen. I
-              would use this for anything.
+      
+              BizTransact's support team was <Mark>incredibly helpful</Mark>  throughout the process. Their guidance on documentation and quick responses to my inquiries made me feel supported and confident in my decision to buy a business through their platform.
             </p>
 
             <Avatar
               image={userThreeImg}
-              name="Gabrielle Winn"
-              title="Co-founder of Acme Inc"
+              name="Ahmed"
+              title="Happy Buyer"
             />
           </div>
         </div>
