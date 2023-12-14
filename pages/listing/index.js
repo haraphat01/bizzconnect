@@ -1,17 +1,3 @@
-// import React from 'react';
-// const Listing = () => {
-//     return (
-//         <div className="flex flex-col items-center justify-center min-h-screen py-2">
-//             <h1 className="text-6xl font-black">
-//                 Hello World!
-//             </h1>
-//             <p className="text-2xl">
-//                 {/* Get started by editing <code>pages/index.js</code> */}
-//             </p>
-//         </div>
-//     )
-// }
-// export default Listing
 import React, { useState } from 'react';
 import {
     AutoComplete,
@@ -20,7 +6,6 @@ import {
     Col,
     Form,
     Input,
-    InputNumber,
     Row,
     Select,
 } from 'antd';
@@ -58,33 +43,31 @@ const tailFormItemLayout = {
 };
 const App = () => {
     const [form] = Form.useForm();
-    const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+    const onFinish = async () => {
+        const formValues = form.getFieldsValue();
+        console.log('Received values of form: ', formValues);
+        const apiUrl = '/api/listingApi';
+        console.log('Received values of form: ', apiUrl);
+        try {
+            const response = await fetch(apiUrl, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ data: formValues }),
+            });
+        
+            if (response.ok) {
+              const result = await response.json();
+              console.log(result);
+            } else {
+              console.error('Failed to send data:', response.statusText);
+            }
+          } catch (error) {
+            console.error('Error:', error);
+          }
     };
-    const prefixSelector = (
-        <Form.Item name="prefix" noStyle>
-            <Select
-                style={{
-                    width: 70,
-                }}
-            >
-                <Option value="86">+234</Option>
-                <Option value="87">+233</Option>
-            </Select>
-        </Form.Item>
-    );
-    const suffixSelector = (
-        <Form.Item name="suffix" noStyle>
-            <Select
-                style={{
-                    width: 70,
-                }}
-            >
-                <Option value="USD">$</Option>
-                <Option value="CNY">¥</Option>
-            </Select>
-        </Form.Item>
-    );
+
     const [autoCompleteResult, setAutoCompleteResult] = useState([]);
     const onWebsiteChange = (value) => {
         if (!value) {
@@ -126,7 +109,7 @@ const App = () => {
                     },
                 ]}
             >
-                <Input />
+                <Input placeholder="enter your valid email address" />
             </Form.Item>
             <Form.Item
                 name="phone"
@@ -139,7 +122,7 @@ const App = () => {
                 ]}
             >
                 <Input
-                    addonBefore={prefixSelector}
+                    placeholder="your contact number"
                     style={{
                         width: '100%',
                     }}
@@ -148,6 +131,7 @@ const App = () => {
             <Form.Item
                 name="Business Name"
                 label="Business Name"
+                placeholder="name"
                 tooltip="Ensure the accurate and legal name of the business"
                 rules={[
                     {
@@ -157,7 +141,7 @@ const App = () => {
                     },
                 ]}
             >
-                <Input />
+                <Input placeholder="ensure the accurate and legal name of the business" />
             </Form.Item>
             <Form.Item
                 name="industry"
@@ -165,8 +149,8 @@ const App = () => {
                 tooltip="Specify the industry or sector the business operates in"
                 rules={[
                     {
-                        type: 'email',
-                        message: 'The input is not valid E-mail!',
+                        type: 'industry',
+                        message: 'input the sector uour business belongs to',
                     },
                     {
                         required: true,
@@ -174,9 +158,8 @@ const App = () => {
                     },
                 ]}
             >
-                <Input />
+                <Input placeholder="input the sector uour business belongs to" />
             </Form.Item>
-
             <Form.Item
                 name="Your Address"
                 label="Your Address"
@@ -188,7 +171,7 @@ const App = () => {
                 ]}
             >
 
-                <Input />
+                <Input placeholder="what's your address?" />
 
             </Form.Item>
 
@@ -203,7 +186,7 @@ const App = () => {
                 ]}
             >
 
-                <Input />
+                <Input placeholder="your business address" />
 
             </Form.Item>
 
@@ -232,11 +215,11 @@ const App = () => {
                     },
                 ]}
             >
-                <Input.TextArea showCount maxLength={100} />
+                <Input.TextArea showCount maxLength={100} placeholder="short description of your biz/product" />
             </Form.Item>
             <Form.Item
-                name="Annual Revenue"
-                label="Annual Revenue"
+                name="Monthly Revenue"
+                label="Monthly Revenue"
                 rules={[
                     {
                         required: false,
@@ -245,21 +228,21 @@ const App = () => {
                 ]}
             >
 
-                <Input />
+                <Input placeholder="what's your monthly revenue?" />
 
             </Form.Item>
             <Form.Item
-                name="Profit"
-                label="Profit"
+                name="Monthly Profit"
+                label="Monthly Profit"
                 rules={[
                     {
                         required: false,
-                        message: 'Please input website!',
+                        message: 'Please input profit!',
                     },
                 ]}
             >
 
-                <Input />
+                <Input placeholder="what's your monthly profit?" />
 
             </Form.Item>
             <Form.Item
@@ -349,10 +332,12 @@ const App = () => {
             </Form.Item>
             <Form.Item {...tailFormItemLayout}>
                 <Button type="primary" htmlType="submit">
-                    Register
+                    submit
                 </Button>
             </Form.Item>
         </Form>
     );
 };
 export default App;
+
+
