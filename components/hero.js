@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Hero = () => {
   const [product, setProduct] = useState('business');
-  const products = ['design', 'product', 'business'];
+  const products = ['design', 'product', 'business','company', 'software'];
   useEffect(() => {
     const changeProduct = () => {
       const randomProduct = products[Math.floor(Math.random() * products.length)];
