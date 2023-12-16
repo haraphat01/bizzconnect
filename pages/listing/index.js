@@ -49,7 +49,6 @@ const App = () => {
     const onFinish = async () => {
         const formValues = form.getFieldsValue();
         const apiUrl = '/api/listingApi';
-        console.log('Received values of form: ', apiUrl);
         try {
             const response = await fetch(apiUrl, {
                 method: 'POST',
@@ -60,11 +59,9 @@ const App = () => {
             });
 
             if (response.ok) {
-                setAlert(true);
                 const result = await response.json();
-                console.log(result);
-                return <Alert message="Success Text" type="success" />;
-            } else {
+                setAlert(true); // Update the alert state here
+            }else {
                 console.error('Failed to send data:', response.statusText);
             }
         } catch (error) {
@@ -86,6 +83,7 @@ const App = () => {
     }));
     return (
         <Layout>
+            {alert && <Alert message={alerting} type="success" />}
             <div className="flex justify-center items-center h-screen">            <Form
                 {...formItemLayout}
                 form={form}
