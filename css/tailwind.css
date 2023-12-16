@@ -14,3 +14,20 @@
     padding-top: 80px; /* Adjust the padding as needed */
   }
 }
+
+
+.ant-form-item-label {
+    font-family:  sans-serif;
+    
+}
+
+.ant-btn-primary {
+  background-color: black; /* Replace with your primary color */
+  border-color: black; /* Replace with your primary color */
+  color: #fff; /* Text color */
+}
+
+.ant-btn-primary:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}

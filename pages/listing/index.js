@@ -10,7 +10,7 @@ import {
     Form,
     Input,
     Row,
-    Select,
+    Select,Typography
 } from 'antd';
 const { Option } = Select;
 
@@ -44,11 +44,15 @@ const tailFormItemLayout = {
         },
     },
 };
+const { Title } = Typography;
 const App = () => {
     const [alert, setAlert] = useState(false)
     const [loading, setLoading] = useState(false);
+    const [autoCompleteResult, setAutoCompleteResult] = useState([]);
     const [form] = Form.useForm();
     const router = useRouter();
+
+
     const onFinish = async () => {
         setLoading(true);
         const formValues = form.getFieldsValue();
@@ -76,7 +80,7 @@ const App = () => {
         }
     };
 
-    const [autoCompleteResult, setAutoCompleteResult] = useState([]);
+  
     const onWebsiteChange = (value) => {
         if (!value) {
             setAutoCompleteResult([]);
@@ -92,7 +96,8 @@ const App = () => {
 
     return (
         <Layout>
-
+         <Title level={2} style={{ fontFamily: 'Arial', fontSize: '24px', textAlign: 'center' }}>Business Listing Form</Title>
+        
             {alert && <Alert message="Your listing was submitted successfully" type="success" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: "0 auto" }} />}
 
             <Row justify="center">
@@ -282,8 +287,8 @@ const App = () => {
 
                         </Form.Item>
                         <Form.Item
-                            name="Asking price"
-                            label="Asking price"
+                            name="Asking Price"
+                            label="Asking Price"
                             required="true"
                             rules={[
                                 {
