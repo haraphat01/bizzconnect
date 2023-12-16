@@ -10,7 +10,7 @@ import {
     Form,
     Input,
     Row,
-    Select,Typography
+    Select, Typography
 } from 'antd';
 const { Option } = Select;
 
@@ -80,7 +80,7 @@ const App = () => {
         }
     };
 
-  
+
     const onWebsiteChange = (value) => {
         if (!value) {
             setAutoCompleteResult([]);
@@ -96,8 +96,8 @@ const App = () => {
 
     return (
         <Layout>
-         <Title level={2} style={{ fontFamily: 'Arial', fontSize: '24px', textAlign: 'center' }}>Business Listing Form</Title>
-        
+            <Title level={2} style={{ fontFamily: 'Arial', fontSize: '24px', textAlign: 'center' }}>Business Listing Form</Title>
+
             {alert && <Alert message="Your listing was submitted successfully" type="success" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: "0 auto" }} />}
 
             <Row justify="center">
@@ -396,7 +396,13 @@ const App = () => {
                                 </Button>
                             )}
                         </Form.Item>
-                        {/* ... form items */}
+                        <Form.Item
+                            name="verified"
+                            hidden
+                            initialValue="NO"
+                        >
+                            <Input />
+                        </Form.Item>
                     </Form>
                 </Col>
             </Row>
