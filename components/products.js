@@ -8,7 +8,7 @@ import userTwoImg from "../public/img/user2.jpg";
 const products = [
     {
         name: "Product 1",
-        picture: userTwoImg,
+    
         price: "$1000",
         location: "New York",
         revenue: "$5000",
@@ -17,7 +17,7 @@ const products = [
     },
     {
         name: "Product 2",
-        picture: userTwoImg,
+        
         price: "$1500",
         location: "San Francisco",
         revenue: "$7000",
@@ -26,7 +26,7 @@ const products = [
     },
     {
         name: "Product 2",
-        picture: userTwoImg,
+       
         price: "$1500",
         location: "San Francisco",
         revenue: "$7000",
@@ -47,7 +47,7 @@ export const Products = () => {
                         <Card
                             hoverable
                             style={{ width: 240 }}
-                            cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                           
                         >
                             <p><strong>Price:</strong> {product.price}</p>
                             <p><strong>Location:</strong> {product.location}</p>
