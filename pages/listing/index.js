@@ -348,7 +348,14 @@ const App = () => {
                                 <Option value="other">Other</Option>
                             </Select>
                         </Form.Item>
-
+                        <Form.Item
+                            name="verified"
+                            label="verified"
+                            hidden
+                            initialValue="NO"
+                        >
+                            <Input />
+                        </Form.Item>
                         <Form.Item label="Captcha" extra="We must make sure that your are a human.">
                             <Row gutter={8}>
                                 <Col span={12}>
@@ -396,13 +403,7 @@ const App = () => {
                                 </Button>
                             )}
                         </Form.Item>
-                        <Form.Item
-                            name="verified"
-                            hidden
-                            initialValue="NO"
-                        >
-                            <Input />
-                        </Form.Item>
+                       
                     </Form>
                 </Col>
             </Row>
