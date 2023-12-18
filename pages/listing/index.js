@@ -68,6 +68,7 @@ const App = () => {
 
             if (response.ok) {
                 const result = await response.json();
+                console.log(result)
                 setAlert(true);
                 form.resetFields();
                 router.push('/');
@@ -403,7 +404,10 @@ const App = () => {
                                 </Button>
                             )}
                         </Form.Item>
-                       
+                        <Button type="primary" htmlType="submit">
+                                    Submit
+                                </Button>
+
                     </Form>
                 </Col>
             </Row>
