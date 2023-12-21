@@ -9,7 +9,7 @@ import next from "next";
 import { Button, FloatButton } from "antd";
 
 const Navbar = () => {
-  const {status} =useSession()
+  const { status } = useSession();
   console.log(status)
   const navigation = [
     "Product",
@@ -73,8 +73,6 @@ const Navbar = () => {
             </>
           )}
         </Disclosure>
-
-        {/* menu  */}
         <div className="hidden text-center lg:flex lg:items-center">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
@@ -86,27 +84,22 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
+        <div className="hidden mr-3 space-x-4 lg:flex nav__item">
+          {status === "authenticated" ? (
+            <>
 
-        {/* {session ? (
-          <>
-            Signed in as {session.user.email} <br />
-            <button onClick={() => signOut()}>Sign out</button>
-          </>
-        ) : (
-          <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-            <Button onClick={() => signIn("google")} className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5">
-              Log in
-            </Button>
-            <ThemeChanger />
-          </div>
-        )} */}
- <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-            <Button onClick={() => signIn("google")} className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5">
-              Log in
-            </Button>
-            <ThemeChanger />
-          </div>
+              <button onClick={() => signOut()} className="px-6 py-2 text-white bg-red-500  rounded-md md:ml-5">Log out</button>
+            </>
+          ) : (
+            <>
+              <Button onClick={() => signIn("google")} className="px-6 py-2 text-white bg-indigo-500 rounded-md md:ml-5">
+                Log in
+              </Button>
+              <ThemeChanger />
+            </>
+          )}
 
+        </div>
       </nav>
     </div>
   );

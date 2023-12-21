@@ -5,10 +5,10 @@ import { NextAuthProvider } from '../pages/Provider';
 const Layout = ({ children }) => {
   return (
     <div>
-      <NextAuthProvider>
-        <Navbar />
-        {children}
-      </NextAuthProvider>
+
+      <Navbar />
+      {children}
+
     </div>
   );
 };
