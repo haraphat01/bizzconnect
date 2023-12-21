@@ -9,7 +9,7 @@ import next from "next";
 import { Button, FloatButton } from "antd";
 
 const Navbar = () => {
-  const { status } = useSession();
+  const { status, data: session } = useSession();
   console.log(status)
   const navigation = [
     "Product",
@@ -85,6 +85,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
+          {console.log(session)}
           {status === "authenticated" ? (
             <>
 
