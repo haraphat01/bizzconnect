@@ -85,7 +85,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-          {console.log(session)}
+          {/* {console.log(session)} */}
           {status === "authenticated" ? (
             <>
 
