@@ -4,8 +4,16 @@ import User from "../../models/user";
 
 
 export default async function handler(req, res) {
-    const { name, email } = req.body;
-    await connectMongoDB()
-    await User.create({name, email})
-    return res.json({message: "user registered"})
-  };
+    const { email, name } = req.body;
+  
+    // Check if the email already exists
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: 'Email already exists' });
+    }
+  
+    // If the email doesn't exist, create a new user
+    const newUser = new User({ email, name });
+    await newUser.save();
+    res.status(201).json({ message: 'User data saved successfully' });
+  }

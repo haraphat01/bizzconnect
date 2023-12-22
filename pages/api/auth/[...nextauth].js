@@ -1,6 +1,7 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
-
+import axios from "axios";
+const localHost = "http://localhost:3000/api/userApi"
 const authOptions = ({
   secret: process.env.SECRET,
   providers: [
@@ -22,7 +23,14 @@ const authOptions = ({
     async session({ session, token, user }) {
       // Send properties to the client, like an access_token from a provider.
       session.accessToken = token.accessToken
-     
+      const { email, name } = session.user
+      try {
+        const response = await axios.post(localHost, { email, name });
+        console.log(response.data); // Log the response from the user API
+      } catch (error) {
+        console.error("Error making POST request to user API:", error);
+      }
+      console.log(session)
       return session
     }
   }

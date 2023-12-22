@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react"
 import ThemeChanger from "./DarkSwitch";
-
+import axios from 'axios';
 import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
 import next from "next";
@@ -16,6 +16,23 @@ const Navbar = () => {
     "Company",
 
   ];
+
+  // const handleGoogleSignIn = async () => {
+  //   const { data: session } = useSession(); // Access the session data
+  
+  //   if (session) {
+  //     const { email, name } = session.user; // Extract email and name from the session
+  //     try {
+  //       // Call the userApi endpoint to save the user data
+  //       await axios.post('/api/userApi', { email, name });
+  //     } catch (error) {
+  //       console.error('Error saving user data: ', error);
+  //     }
+  //   } else {
+  //     // If the session is not available, initiate Google sign-in
+  //     await signIn("google");
+  //   }
+  // };
 
   return (
     <div className="w-full">
