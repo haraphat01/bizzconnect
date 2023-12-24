@@ -11,6 +11,7 @@ import Footer from "../components/footer";
 import Testimonials from "../components/testimonials";
 import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
+import { Button } from "antd";
 
 const Home = () => {
   return (
@@ -28,10 +29,14 @@ const Home = () => {
       
       <Hero />
       <SectionTitle
-        pretitle="Businesses for sale"
-        title=" Businesses available for sale">
+        title="Recently business available for sale"
+        >
       </SectionTitle>
     <Products/>
+    
+     
+          
+    
       <Benefits data={benefitOne} />
 
       <SectionTitle

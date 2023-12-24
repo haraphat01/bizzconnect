@@ -357,27 +357,6 @@ const App = () => {
                         >
                             <Input />
                         </Form.Item>
-                        <Form.Item label="Captcha" extra="We must make sure that your are a human.">
-                            <Row gutter={8}>
-                                <Col span={12}>
-                                    <Form.Item
-                                        name="captcha"
-                                        noStyle
-                                        rules={[
-                                            {
-                                                required: true,
-                                                message: 'Please input the captcha you got!',
-                                            },
-                                        ]}
-                                    >
-                                        <Input />
-                                    </Form.Item>
-                                </Col>
-                                <Col span={12}>
-                                    <Button>Get captcha</Button>
-                                </Col>
-                            </Row>
-                        </Form.Item>
 
                         <Form.Item
                             name="agreement"
@@ -397,7 +376,7 @@ const App = () => {
                         <Form.Item {...tailFormItemLayout}>
                             {loading ? (
 
-                                <div> Listing is being submitted  <Spin size="large" /></div>
+                                <div> Your listing is being submitted  <Spin size="large" /></div>
                             ) : (
                                 <Button type="primary" htmlType="submit">
                                     Submit
