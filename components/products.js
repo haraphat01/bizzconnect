@@ -39,7 +39,7 @@ export const Products = () => {
 
     return (
         <div >
-            <div className="flex flex-wrap justify-center sm:space-x-4 sm:space-y-4">
+            <div className="flex flex-wrap justify-center sm:space-x-7 sm:space-y-7">
 
                 {products.map((product, index) => (
                     <div key={index} className=" lg:w-1/4 md:w-1/2 sm:w-full">
