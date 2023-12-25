@@ -1,5 +1,5 @@
 "use client"
-// Import necessary modules and components
+
 import { useEffect, useState } from "react";
 import { Card, Spin } from 'antd';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import Layout from "../../components/Layout";
 
 const { Meta } = Card;
 
-// Home component
+
 const Home = () => {
     const [listings, setListings] = useState([]);
     const [loading, setLoading] = useState(true);
