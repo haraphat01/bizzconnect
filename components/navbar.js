@@ -10,16 +10,16 @@ import { Button, FloatButton } from "antd";
 
 const Navbar = () => {
   const { status, data: session } = useSession();
-  console.log(status)
   const navigation = [
     "Product",
     "Company",
+    "Marketplace"
 
   ];
 
   // const handleGoogleSignIn = async () => {
   //   const { data: session } = useSession(); // Access the session data
-  
+
   //   if (session) {
   //     const { email, name } = session.user; // Extract email and name from the session
   //     try {
@@ -81,9 +81,19 @@ const Navbar = () => {
                         {item}
                       </Link>
                     ))}
-                    <Link href="/" className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5">
-                      Get Started
-                    </Link>
+                    {status === "authenticated" ? (
+                      <>
+
+                        <button onClick={() => signOut()} className="px-6 py-2 text-white bg-red-500  rounded-md md:ml-5">Log out</button>
+                      </>
+                    ) : (
+                      <>
+                        <Button onClick={() => signIn("google")} className="px-6 py-2 text-white bg-indigo-500 rounded-md md:ml-5">
+                          Log in
+                        </Button>
+
+                      </>
+                    )}
                   </>
                 </Disclosure.Panel>
               </div>

@@ -29,7 +29,7 @@ const Home = () => {
       
       <Hero />
       <SectionTitle
-        title="Recently business available for sale"
+        title="Recently listed business"
         >
       </SectionTitle>
     <Products/>

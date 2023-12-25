@@ -288,6 +288,35 @@ const App = () => {
 
                         </Form.Item>
                         <Form.Item
+                            name="Total Revenue"
+                            label="Monthly Revenue"
+                            rules={[
+                                {
+                                    required: false,
+                                    message: 'Please input website!',
+                                },
+                            ]}
+                        >
+
+                            <Input placeholder="what's your monthly revenue?" />
+
+
+                        </Form.Item>
+                        <Form.Item
+                            name="Total Profit"
+                            label="Monthly Profit"
+                            rules={[
+                                {
+                                    required: false,
+                                    message: 'Please input profit!',
+                                },
+                            ]}
+                        >
+
+                            <Input placeholder="what's your monthly profit?" />
+
+                        </Form.Item>
+                        <Form.Item
                             name="Asking Price"
                             label="Asking Price"
                             required="true"
@@ -317,6 +346,38 @@ const App = () => {
 
                         </Form.Item>
                         <Form.Item
+                            name="Number of Employees"
+                            label="Number of Employees"
+                            rules={[
+                                {
+                                    required: false,
+                                    message: 'Indicate the current number of employees',
+                                },
+                            ]}
+                        >
+
+                            <Input />
+
+                        </Form.Item>
+                        <Form.Item
+                            name="Legal Structure"
+                            label="Legal Structure"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Specify the legal structure of the business',
+                                },
+                            ]}
+                        >
+                            <Select placeholder="select your listing category">
+                                <Option value="physical">Sole Proprietorship</Option>
+                                <Option value="online">Partnership</Option>
+                                <Option value="software">Limited Liability Company (LLC)</Option>
+                                <Option value="idea">Corporation</Option>
+                                <Option value="idea">Nonprofit Corporation</Option>
+                            </Select>
+                        </Form.Item>
+                        <Form.Item
                             name="Licenses and Permits"
                             label="Licenses and Permits"
                             tooltip="Outline any licenses or permits required for the operation of the business."
@@ -329,6 +390,15 @@ const App = () => {
                         >
 
                             <Input />
+
+                        </Form.Item>
+                        <Form.Item
+                            name="Social Media"
+                            label="Social Media"
+
+                        >
+
+                            <Input placeholder="Enter your social media handle" />
 
                         </Form.Item>
 
@@ -383,7 +453,7 @@ const App = () => {
                                 </Button>
                             )}
                         </Form.Item>
-                      
+
 
                     </Form>
                 </Col>
