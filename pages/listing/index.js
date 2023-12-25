@@ -198,7 +198,7 @@ const App = () => {
                                 },
                             ]}
                         >
-                            <Input placeholder="input the sector uour business belongs to" />
+                            <Input placeholder="input the sector your business belongs to" />
                         </Form.Item>
                         <Form.Item
                             name="Your Address"
@@ -289,7 +289,7 @@ const App = () => {
                         </Form.Item>
                         <Form.Item
                             name="Total Revenue"
-                            label="Monthly Revenue"
+                            label="Total Revenue"
                             rules={[
                                 {
                                     required: false,
@@ -304,7 +304,7 @@ const App = () => {
                         </Form.Item>
                         <Form.Item
                             name="Total Profit"
-                            label="Monthly Profit"
+                            label="Total Profit"
                             rules={[
                                 {
                                     required: false,
