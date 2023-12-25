@@ -41,7 +41,7 @@ export const Products = () => {
             <div className="flex flex-wrap justify-center ">
 
                 {products.map((product, index) => (
-                    <div key={index} className=" lg:w-1/4 md:w-1/2 sm:w-full">
+                    <div key={index} className=" p-5">
                         <div className="">
 
                             <Card
