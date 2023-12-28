@@ -63,17 +63,21 @@ const Home = () => {
         }
     }, [status, router]);
 
-    // Render the marketplace content here
+
 
     return (
         <Layout>
-            <div>
-            <input
-                    type="text"
-                    placeholder="Search..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
+            <div >
+                <div  style={{ textAlign: 'center', marginTop: '20px' }}>
+                    <input
+                        type="text"
+                        placeholder="Search to filter the listing available ....."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        autoFocus
+                        className="w-1/2 p-2 border-2 border-blue-500 focus:border-blue-700"
+                    />
+                </div>
                 {status === "authenticated" && (
                     <div>
                         {loading ? ( // Conditionally render loading icon
@@ -82,14 +86,16 @@ const Home = () => {
                             </div>
                         ) : (
                             <div className="flex flex-wrap justify-center">
-                                
+
                                 {filteredListings.map((listing) => (
 
                                     <div key={listing._id} className="p-5">
                                         {console.log(listing._id)}
                                         <Link href={`/details/${listing._id}`}>
 
-                                            <Card hoverable style={{ width: 240 }}>
+                                            <Card hoverable style={{ width: 270 }}
+                                            className="hover:bg-primary"
+                                            >
                                                 <p><strong>Industry:</strong> {listing.data?.industry}</p>
                                                 <p><strong>Category:</strong> {listing.data?.category}</p>
                                                 <p><strong>Business Description:</strong> {listing.data?.["Business Description"]}</p>

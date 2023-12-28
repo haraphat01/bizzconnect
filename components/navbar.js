@@ -2,37 +2,18 @@
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react"
 import ThemeChanger from "./DarkSwitch";
-import axios from 'axios';
-import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
-import next from "next";
-import { Button, FloatButton } from "antd";
+
 
 const Navbar = () => {
   const { status, data: session } = useSession();
   const navigation = [
     "Product",
     "Company",
-    "Marketplace"
+    status === "authenticated" && <Link href="/marketplace" key="marketplace">Marketplace</Link>
 
   ];
 
-  // const handleGoogleSignIn = async () => {
-  //   const { data: session } = useSession(); // Access the session data
-
-  //   if (session) {
-  //     const { email, name } = session.user; // Extract email and name from the session
-  //     try {
-  //       // Call the userApi endpoint to save the user data
-  //       await axios.post('/api/userApi', { email, name });
-  //     } catch (error) {
-  //       console.error('Error saving user data: ', error);
-  //     }
-  //   } else {
-  //     // If the session is not available, initiate Google sign-in
-  //     await signIn("google");
-  //   }
-  // };
 
   return (
     <div className="w-full">
@@ -84,13 +65,13 @@ const Navbar = () => {
                     {status === "authenticated" ? (
                       <>
 
-                        <button onClick={() => signOut()} className="px-6 py-2 text-white bg-red-500  rounded-md md:ml-5">Log out</button>
+                        <button onClick={() => signOut()} style={{ width: "110px", height: "40px" }} className="px-6 py-2 text-white bg-red-500  rounded-md md:ml-5">Log out</button>
                       </>
                     ) : (
                       <>
-                        <Button onClick={() => signIn("google")} className="px-6 py-2 text-white bg-indigo-500 rounded-md md:ml-5">
+                        <button onClick={() => signIn("google")} style={{ width: "110px", height: "40px" }} className="px-6 py-2 text-white bg-indigo-500 rounded-md md:ml-5">
                           Log in
-                        </Button>
+                        </button>
 
                       </>
                     )}
@@ -116,13 +97,13 @@ const Navbar = () => {
           {status === "authenticated" ? (
             <>
 
-              <button onClick={() => signOut()} className="px-6 py-2 text-white bg-red-500  rounded-md md:ml-5">Log out</button>
+              <button onClick={() => signOut()} className="px-6 py-2 text-white bg-red-500  rounded-md md:ml-5" style={{ width: "120px", height: "45px" }} >Log out</button>
             </>
           ) : (
             <>
-              <Button onClick={() => signIn("google")} className="px-6 py-2 text-white bg-indigo-500 rounded-md md:ml-5">
+              <button style={{ width: "120px", height: "45px" }} onClick={() => signIn("google")} className="px-6 py-2 text-white bg-indigo-500 rounded-md md:ml-5">
                 Log in
-              </Button>
+              </button>
               <ThemeChanger />
             </>
           )}

@@ -73,7 +73,7 @@ export const Products = () => {
 
             </div>
             <div className="flex justify-center mt-4">
-                <Button className="m-5" onClick={handleExploreMarketplace}>
+                <Button className="m-5" style={{ height: "50px" }} onClick={handleExploreMarketplace}>
                     Explore marketplace
                 </Button>
             </div>
