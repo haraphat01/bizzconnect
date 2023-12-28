@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import { Card, Carousel, Button } from 'antd';
+import { useRouter } from 'next/router';
+import { Card, Carousel,Alert, Button } from 'antd';
+import { useSession } from "next-auth/react"
+
 const { Meta } = Card;
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import userTwoImg from "../public/img/user2.jpg";
@@ -35,7 +38,16 @@ const products = [
 
 ];
 export const Products = () => {
-
+    const { status, data: session } = useSession();
+    const router = useRouter();
+    const handleExploreMarketplace = () => {
+        if (status !== "authenticated") {
+            alert("Please log in to explore the marketplace");
+            
+        } else {
+            router.push("/marketplace");
+        }
+    };
     return (
         <div >
             <div className="flex flex-wrap justify-center ">
@@ -61,11 +73,9 @@ export const Products = () => {
 
             </div>
             <div className="flex justify-center mt-4">
-                <Link href="/marketplace">
-                    <Button className="m-5">
-                        Explore marketplace
-                    </Button>
-                </Link>
+                <Button className="m-5" onClick={handleExploreMarketplace}>
+                    Explore marketplace
+                </Button>
             </div>
         </div>
     );

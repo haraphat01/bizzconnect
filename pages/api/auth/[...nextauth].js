@@ -30,7 +30,6 @@ const authOptions = ({
       } catch (error) {
         console.error("Error making POST request to user API:", error);
       }
-      console.log(session)
       return session
     }
   }

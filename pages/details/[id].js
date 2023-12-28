@@ -29,10 +29,6 @@ const DetailsPage = () => {
   }, [id]);
 
 
-
-  // console.log("details", details.data);
-  // const { data } = details.data
-  // console.log("data", data);
   return (
 
     <Layout>

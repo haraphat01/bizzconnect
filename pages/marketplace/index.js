@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Card, Spin } from 'antd';
 import Link from 'next/link';
 import Layout from "../../components/Layout";
+import { useRouter } from "next/router";
+import { useSession, getSession } from "next-auth/react";
 
 const { Meta } = Card;
 
