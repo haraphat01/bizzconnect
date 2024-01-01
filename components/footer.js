@@ -8,7 +8,7 @@ export default function Footer() {
     "Product",
     "Company",
   ];
-  const legal = ["Terms", "Privacy", "Legal"];
+  const legal = ["Terms", "Privacy"];
   return (
     <div className="relative">
       <Container>
@@ -37,28 +37,28 @@ export default function Footer() {
             <div>Follow us</div>
             <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
               <a
-                href="https://twitter.com/Bizlink"
+                href="https://twitter.com/Bizlink_23"
                 target="_blank"
                 rel="noopener">
                 <span className="sr-only">Twitter</span>
                 <Twitter />
               </a>
-              <a
-                href="https://twitter.com/Bizlink"
+              {/* <a
+                href="https://twitter.com/Bizlink23"
                 target="_blank"
                 rel="noopener">
                 <span className="sr-only">Facebook</span>
                 <Facebook />
-              </a>
+              </a> */}
               <a
-                href="https://twitter.com/Bizlink"
+                href="https://instagram.com/Bizlink23"
                 target="_blank"
                 rel="noopener">
                 <span className="sr-only">Instagram</span>
                 <Instagram />
               </a>
               <a
-                href="https://linkedin.com/"
+                href="https://linkedin.com/company/bizlink24"
                 target="_blank"
                 rel="noopener">
                 <span className="sr-only">Linkedin</span>

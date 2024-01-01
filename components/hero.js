@@ -6,14 +6,14 @@ import Link from "next/link";
 
 const Hero = () => {
   const [product, setProduct] = useState('business');
-  const products = ['design', 'product', 'business','company', 'software'];
+  const products = ['startup', 'product', 'business','company', 'software'];
   useEffect(() => {
     const changeProduct = () => {
       const randomProduct = products[Math.floor(Math.random() * products.length)];
       setProduct(randomProduct);
     };
     changeProduct();
-    const intervalId = setInterval(changeProduct, 1000);
+    const intervalId = setInterval(changeProduct, 2000);
     return () => clearInterval(intervalId);
   }, [products]);
 
