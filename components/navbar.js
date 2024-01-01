@@ -4,6 +4,8 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import ThemeChanger from "./DarkSwitch";
 import { Disclosure } from "@headlessui/react";
 
+const logo = "/img/Bizlink_color logo@4x/Bizlink_color logo@4x.png";
+
 
 const Navbar = () => {
   const { status, data: session } = useSession();
@@ -26,9 +28,9 @@ const Navbar = () => {
                 <Link href="/">
                   <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
                     <span>
-
+                    <img src={logo} alt="bizlink's logo" className="w-32 h-auto sm:w-48 md:w-64"/>
                     </span>
-                    <span>Bizlink</span>
+                
                   </span>
                 </Link>
 

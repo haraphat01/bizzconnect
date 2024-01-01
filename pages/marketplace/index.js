@@ -50,6 +50,7 @@ const Home = () => {
 
         fetchData();
     }, []);
+    console.log(listings)
     useEffect(() => {
         if (status === "authenticated") {
             // User is authenticated, allow access to the marketplace

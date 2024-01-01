@@ -42,7 +42,11 @@ const DetailsPage = () => {
             <div className="col-span-1">
               <p ><span className="font-semibold">Asking Price: </span>{details.data["Asking Price"]}</p>
               <p ><span className="font-semibold">Legal Structure:</span> {details.data["Legal Structure"]}</p>
-              <p className="font-semibold"><span className="font-semibold">Address: </span>{details.data["Your Address"]}</p>
+              <p><span className="font-semibold">Monthly Profit:</span> {details.data["Monthly Profit"]}</p>
+              <p><span className="font-semibold">Monthly Revenue:</span> {details.data["Monthly Revenue"]}</p>
+              <p><span className="font-semibold">Total Profit:</span> {details.data["Monthly Profit"]}</p>
+              <p><span className="font-semibold">Total Revenue:</span> {details.data["Total Revenue"]}</p>
+        
               <p className="font-semibold">Category: {details.data["category"]}</p>
             </div>
             <div className="col-span-1">
@@ -51,6 +55,9 @@ const DetailsPage = () => {
               <p ><span className="font-semibold">Industry: </span>{details.data["industry"]}</p>
               <p ><span className="font-semibold">Phone: </span>{details.data["phone"]}</p>
               <p><span className="font-semibold">Verified:</span> {details.data["verified"]}</p>
+              <p><span className="font-semibold">Address:</span> {details.data["Your Address"]}</p>
+              
+             
             </div>
           </div>
         </div>) : (
