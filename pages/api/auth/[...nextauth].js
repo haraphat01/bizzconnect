@@ -24,6 +24,7 @@ const authOptions = ({
       // Send properties to the client, like an access_token from a provider.
       session.accessToken = token.accessToken
       const { email, name } = session.user
+    
       try {
         const response = await axios.post(localHost, { email, name });
         console.log(response.data); // Log the response from the user API

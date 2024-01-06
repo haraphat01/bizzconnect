@@ -4,6 +4,7 @@ import User from "../../models/user";
 
 
 export default async function handler(req, res) {
+    await connectMongoDB()
     const { email, name } = req.body;
   
     // Check if the email already exists
