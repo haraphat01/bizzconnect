@@ -1,5 +1,6 @@
 import { MongoClient, ObjectId } from 'mongodb';
 
+
 const handler = async (req, res) => {
   const client = await MongoClient.connect(process.env.MONGODB_KEY);
 
@@ -14,7 +15,7 @@ const handler = async (req, res) => {
       res.status(201).json({ message: 'Listing submitted successfully' });
     } else if (req.method === 'GET') {
       // Handle GET request
-
+      
       if ('id' in req.query) {
         // Fetch a specific listing by ID
         const { id } = req.query;
