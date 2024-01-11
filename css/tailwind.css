@@ -31,3 +31,16 @@
   background-color: #40a9ff;
   border-color: #40a9ff;
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 10px 0;
+  text-align: center;
+  min-height: 50px; /* Set a minimum height for the footer */
+}
+.about-us {
+  font-family: inherit;
+}

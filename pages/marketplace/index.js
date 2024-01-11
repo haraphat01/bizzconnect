@@ -72,11 +72,13 @@ const Home = () => {
                 <div  style={{ textAlign: 'center', marginTop: '20px' }}>
                     <input
                         type="text"
-                        placeholder="Search to filter the listing available ....."
+                        placeholder="Search to filter the listings available ....."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         autoFocus
-                        className="w-1/2 p-2 border-2 border-blue-500 focus:border-blue-700"
+                        style={{ outline: 'none' }}
+
+                        className="w-1/2 p-2 border-2 border-blue-500 "
                     />
                 </div>
                 {status === "authenticated" && (

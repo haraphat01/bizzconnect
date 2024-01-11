@@ -1,7 +1,7 @@
 "use client"
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { Spin } from 'antd';
+import { Spin, Button } from 'antd';
 import Layout from '../../components/Layout';
 
 const DetailsPage = () => {
@@ -33,7 +33,9 @@ const DetailsPage = () => {
 
     <Layout>
       {details ? (
+        
         <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl m-3 p-5">
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
             <div className="col-span-1 md:col-span-2">
               <h2 className="text-2xl font-bold mb-2 text-indigo-500">Business Name: {details.data["Business Name"]}</h2>
@@ -59,12 +61,17 @@ const DetailsPage = () => {
               
              
             </div>
+            <Button onClick={() => router.push('/marketplace')}>Go Back</Button>
           </div>
+          
         </div>) : (
         <div style={{ textAlign: 'center', marginTop: '20px' }}>
           <Spin size="large" />
         </div>
       )}
+         
+        
+      
     </Layout>
 
 

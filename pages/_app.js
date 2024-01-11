@@ -2,6 +2,7 @@
 import { ThemeProvider } from "next-themes";
 import { SessionProvider } from "next-auth/react"
 
+
 import "../css/tailwind.css";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
