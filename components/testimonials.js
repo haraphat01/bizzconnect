@@ -13,7 +13,7 @@ const Testimonials = () => {
         <div className="lg:col-span-2 xl:col-auto">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
 
-            <p className="text-2xl leading-normal">Bizlink made selling my business a <Mark>seamless </Mark> experience. The platform's user-friendly interface and efficient communication tools connected me with serious buyers, and the entire process was smooth and hassle-free.</p>
+            <p className="text-2xl leading-normal">Bizzlink made selling my business a <Mark>seamless </Mark> experience. The platform's user-friendly interface and efficient communication tools connected me with serious buyers, and the entire process was smooth and hassle-free.</p>
 
             <Avatar
               image={userOneImg}
@@ -26,7 +26,7 @@ const Testimonials = () => {
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-2xl leading-normal ">
 
-              As an investor, finding the <Mark>right business</Mark>  is crucial. Bizlink's matching algorithm not only simplified my search but also connected me with a business that perfectly aligned with my investment goals. It's a game-changer for anyone looking to invest wisely
+              As an investor, finding the <Mark>right business</Mark>  is crucial. Bizzlink's matching algorithm not only simplified my search but also connected me with a business that perfectly aligned with my investment goals. It's a game-changer for anyone looking to invest wisely
             </p>
 
             <Avatar
@@ -40,7 +40,7 @@ const Testimonials = () => {
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-2xl leading-normal ">
       
-              Bizlink's support team was <Mark>incredibly helpful</Mark>  throughout the process. Their guidance on documentation and quick responses to my inquiries made me feel supported and confident in my decision to buy a business through their platform.
+              Bizzlink's support team was <Mark>incredibly helpful</Mark>  throughout the process. Their guidance on documentation and quick responses to my inquiries made me feel supported and confident in my decision to buy a business through their platform.
             </p>
 
             <Avatar

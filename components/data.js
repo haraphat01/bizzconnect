@@ -11,7 +11,7 @@ import benefitOneImg from "../public/img/benefit-one.png";
 import benefitTwoImg from "../public/img/benefit-two.png";
 
 const benefitOne = {
-  title: "Bizlink's Benefits",
+  title: "Bizzlink's Benefits",
   image: benefitOneImg,
   bullets: [
     {

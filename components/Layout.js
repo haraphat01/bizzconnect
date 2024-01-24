@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
     <div>
       <Navbar />
       {children}
-      <Footer className="fixed bottom-0 w-full bg-gray-200 p-4 text-center min-h-16" /> {/* Apply Tailwind CSS classes here */}
+      <Footer className="min-h-50" /> {/* Apply Tailwind CSS classes here */}
     </div>
   );
 };

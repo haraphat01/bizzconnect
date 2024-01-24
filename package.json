@@ -43,6 +43,7 @@
     "react-hook-form": "^7.43.9"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.0",
     "@types/node": "20.10.4",
     "@types/react": "18.2.43",
     "autoprefixer": "^10.4.14",

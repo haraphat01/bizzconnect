@@ -27,7 +27,7 @@ const Hero = () => {
               Facilitate the seamless sale of your {product}.
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-            Welcome to BizLink, where small business dreams meet their perfect match. Whether you're a passionate entrepreneur looking to sell your thriving business or a savvy investor seeking the next big opportunity, BizLink is the bridge that brings your goals to reality.
+            Welcome to Bizzlink, where small business dreams meet their perfect match. Whether you're a passionate entrepreneur looking to sell your thriving business or a savvy investor seeking the next big opportunity, Bizzlink is the bridge that brings your goals to reality.
             </p>
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
              

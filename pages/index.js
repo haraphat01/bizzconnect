@@ -12,44 +12,61 @@ import Testimonials from "../components/testimonials";
 import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
 import { Button } from "antd";
-
+import Layout from "../components/Layout";
 const Home = () => {
   return (
     <>
+     <Layout> 
       <Head>
-        <title>Bizlink</title>
+        <title>Bizzlink</title>
         <meta
           name="description"
-          content="Bizlink is a dynamic online platform designed to facilitate the seamless sale of businesses."
+          content="Bizzlink is a dynamic online platform designed to facilitate the seamless sale of businesses."
         />
         <link rel="icon" href="/favicon.ico" />
+        <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=GTM-P4PBHBCT"
+    />
+    <script
+        dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'GTM-P4PBHBCT');
+            `,
+        }}
+    />
+        
       </Head>
 
-      <Navbar />
-      
+      {/* <Navbar /> */}
+
       <Hero />
       <SectionTitle
         title="Recently listed business"
-        >
+      >
       </SectionTitle>
-    <Products/>
-    
-     
-          
-    
+      <Products />
+
+
+
+
       <Benefits data={benefitOne} />
 
       <SectionTitle
         pretitle="Testimonials"
         title="Customer Success Stories">
-        Discover how Bizlink has empowered entrepreneurs and investors on their business journey. Here are inspiring stories from our users:
+        Discover how Bizzlink has empowered entrepreneurs and investors on their business journey. Here are inspiring stories from our users:
       </SectionTitle>
       <Testimonials />
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
       </SectionTitle>
       <Faq />
-      <Footer />
+      {/* <Footer /> */}
       <PopupWidget />
+      </Layout>
     </>
   );
 }

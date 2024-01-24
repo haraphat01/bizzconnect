@@ -254,7 +254,7 @@ const App = () => {
                                 },
                             ]}
                         >
-                            <Input.TextArea showCount maxLength={100} placeholder="short description of your biz/product" />
+                            <Input.TextArea showCount maxLength={500} placeholder="short description of your biz/product" />
                         </Form.Item>
 
                         <Form.Item
