@@ -26,7 +26,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
         <script
         async
-        src="https://www.googletagmanager.com/gtag/js?id=GTM-P4PBHBCT"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
     />
     <script
         dangerouslySetInnerHTML={{
@@ -34,10 +34,11 @@ const Home = () => {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'GTM-P4PBHBCT');
+                gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
             `,
         }}
     />
+    
         
       </Head>
 
