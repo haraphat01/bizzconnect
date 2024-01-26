@@ -1,7 +1,7 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import axios from "axios";
-const localHost = "http://localhost:3000/api/userApi"
+const localHost = process.env.HOST
 const authOptions = ({
   secret: process.env.SECRET,
   providers: [

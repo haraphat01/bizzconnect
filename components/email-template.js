@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 
 const EmailTemplate = ({ firstName }) => (
   <div>
@@ -8,8 +8,5 @@ const EmailTemplate = ({ firstName }) => (
     <p>Keep an eye out for exciting business opportunities available for sale on our marketplace.</p>
   </div>
 );
-EmailTemplate.propTypes = {
-  firstName: PropTypes.string.isRequired,
-};
 
 export default EmailTemplate;

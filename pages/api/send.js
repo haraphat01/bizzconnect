@@ -4,10 +4,11 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+
 export default async (req, res) => {
     const { email, name } = req.body; 
   const { data, error } = await resend.emails.send({
-    from: 'Acme <onboarding@bizzlink.co>',
+    from: 'Acme <hello@bizzlink.co>',
     to: [email],
     subject: 'Welcome to Bizzlink',
     react: EmailTemplate({ firstName: name }),

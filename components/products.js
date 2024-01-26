@@ -43,7 +43,6 @@ export const Products = () => {
     const handleExploreMarketplace = () => {
         if (status !== "authenticated") {
             alert("Please log in to explore the marketplace");
-            
         } else {
             router.push("/marketplace");
         }

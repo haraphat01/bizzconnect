@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for bizzconnect-quiet-shadow-7899-fragrant-mountain-6147 on 2024-01-22T16:40:21+01:00
+# fly.toml app configuration file generated for bizzconnect-wild-dust-5797 on 2024-01-25T14:11:36+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "bizzconnect-quiet-shadow-7899-fragrant-mountain-6147"
-primary_region = "cdg"
+app = 'bizzconnect-wild-dust-5797'
+primary_region = 'ams'
 
 [build]
 
@@ -14,9 +14,9 @@ primary_region = "cdg"
   auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
-  processes = ["app"]
+  processes = ['app']
 
 [[vm]]
-  cpu_kind = "shared"
+  cpu_kind = 'shared'
   cpus = 1
   memory_mb = 1024
