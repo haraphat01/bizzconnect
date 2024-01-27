@@ -1,8 +1,10 @@
 "use client"
 import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react"
+import { useRouter } from 'next/router';
 import ThemeChanger from "./DarkSwitch";
 import { Disclosure } from "@headlessui/react";
+import { useEffect } from "react";
 
 const logo = "/img/Bizlink_color logo@4x/Bizlink_color logo@4x.png";
 
@@ -16,6 +18,12 @@ const Navbar = () => {
 
   ];
 
+
+  useEffect(() => {
+    if (status === 'authenticated') {
+      alert('Login approved! You can explore the marketplace');
+    }
+  }, [status]);
 
   return (
     <div className="w-full">
