@@ -1,23 +1,25 @@
 "use client"
-
 import { useEffect, useState } from "react";
 import { Card, Spin } from 'antd';
 import Link from 'next/link';
 import Layout from "../../components/Layout";
 import { useRouter } from "next/router";
 import { useSession, getSession } from "next-auth/react";
+import useSWR from 'swr'
 
 const { Meta } = Card;
 
 
 const Home = () => {
-    const [listings, setListings] = useState([]);
+    
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
     const { data: session, status } = useSession();
     const router = useRouter();
-
-    const filteredListings = listings.filter((listing) => {
+    const fetcher = (...args) => fetch(...args).then(res => res.json())
+    const { data: listings, error, isLoading } = useSWR('/api/listingApi', fetcher)
+ 
+    const filteredListings = listings && listings.filter((listing) => {
         return (
             (listing.data?.industry?.toLowerCase().includes(searchTerm.toLowerCase()) || false) ||
             (listing.data?.category?.toLowerCase().includes(searchTerm.toLowerCase()) || false) ||
@@ -28,29 +30,6 @@ const Home = () => {
         );
     });
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch('/api/listingApi', {
-                    method: 'GET',
-                });
-
-                if (!response.ok) {
-                    throw new Error('Failed to fetch data');
-                }
-
-                const data = await response.json();
-                setListings(data);
-            } catch (error) {
-                console.error('Error fetching data:', error.message);
-            } finally {
-                setLoading(false); // Set loading to false when data fetching is complete
-            }
-        };
-
-        fetchData();
-    }, []);
-    console.log(listings)
     useEffect(() => {
         if (status === "authenticated") {
             // User is authenticated, allow access to the marketplace
@@ -64,7 +43,7 @@ const Home = () => {
         }
     }, [status, router]);
 
-
+    
 
     return (
         <Layout>
@@ -83,7 +62,7 @@ const Home = () => {
                 </div>
                 {status === "authenticated" && (
                     <div>
-                        {loading ? ( // Conditionally render loading icon
+                        {isLoading ? ( // Conditionally render loading icon
                             <div style={{ textAlign: 'center', marginTop: '20px' }}>
                                 <Spin size="large" />
                             </div>
@@ -93,8 +72,7 @@ const Home = () => {
                                 {filteredListings.map((listing) => (
 
                                     <div key={listing._id} className="p-5">
-                                        {console.log(listing._id)}
-                                        <Link href={`/details/${listing._id}`}>
+                                        <Link href={`/marketplace/${listing._id}`}>
 
                                             <Card hoverable style={{ width: 270 }}
                                             className="hover:bg-primary"

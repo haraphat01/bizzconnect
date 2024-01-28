@@ -21,14 +21,12 @@ const handler = async (req, res) => {
         const { id } = req.query;
         const _id = new ObjectId(id)
         const listing = await listingsCollection.findOne({ _id: new ObjectId(_id) });
-
         if (listing) {
           res.status(200).json(listing);
         } else {
           res.status(404).json({ message: 'Listing not found' });
         }
       } else {
-        // Fetch all listings
         const listings = await listingsCollection.find({}).toArray();
         res.status(200).json(listings);
       }

@@ -3,6 +3,7 @@ import { useForm, useWatch } from "react-hook-form";
 import { Disclosure, Transition } from "@headlessui/react";
 
 const PopupWidget = () => {
+  const web3mail = process.env.NEXT_PUBLIC_WEBMAIL_ACCESS_KEY 
   const {
     register,
     handleSubmit,
@@ -18,7 +19,7 @@ const PopupWidget = () => {
   const userName = useWatch({ control, name: "name", defaultValue: "Someone" });
 
   const onSubmit = async (data, e) => {
-    console.log(data);
+   
     await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -106,9 +107,9 @@ const PopupWidget = () => {
               leaveTo="opacity-0 translate-y-5">
               <Disclosure.Panel className=" flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-gray-300 dark:border-gray-800 bg-white shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]">
                 <div className="flex flex-col items-center justify-center h-32 p-5 bg-indigo-600">
-                  <h3 className="text-lg text-white">How can we help?</h3>
+                  <h3 className="text-lg text-white">Seen a business you'd like to buy?</h3>
                   <p className="text-white opacity-50">
-                    We usually respond in a few hours
+                    Fill this form, we usually respond in a few hours
                   </p>
                 </div>
                 <div className="flex-grow h-full p-6 overflow-auto bg-gray-50 ">
@@ -116,17 +117,17 @@ const PopupWidget = () => {
                     <form onSubmit={handleSubmit(onSubmit)} noValidate>
                       <input
                         type="hidden"
-                        value="YOUR_ACCESS_KEY_HERE"
+                        value= {web3mail}
                         {...register("apikey")}
                       />
                       <input
                         type="hidden"
-                        value={`${userName} sent a message from Nextly`}
+                        value={`${userName} sent a message from Bizzlink's website`}
                         {...register("subject")}
                       />
                       <input
                         type="hidden"
-                        value="Nextly Template"
+                        value="Bizzlink"
                         {...register("from_name")}
                       />
                       <input
@@ -189,6 +190,36 @@ const PopupWidget = () => {
                         {errors.email && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
                             {errors.email.message}
+                          </div>
+                        )}
+                      </div>
+                      <div className="mb-4">
+                        <label
+                          htmlFor="buyer"
+                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400">
+                          Product's Link
+                        </label>
+                        <input
+                          type="buyer"
+                          id="buyer"
+                          {...register("buyer", {
+                            required: "Paste the link to the product",
+                            pattern: {
+                              value: /^\S+@\S+$/i,
+                              message: "Paste the link to the product",
+                            },
+                          })}
+                          placeholder="bizzlink.com/listing/listingid"
+                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
+                            errors.email
+                              ? "border-red-600 focus:border-red-600 ring-red-100"
+                              : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                          }`}
+                        />
+
+                        {errors.buyer && (
+                          <div className="mt-1 text-sm text-red-400 invalid-feedback">
+                            {errors.buyer.message}
                           </div>
                         )}
                       </div>

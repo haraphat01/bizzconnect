@@ -4,13 +4,14 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/router';
 import ThemeChanger from "./DarkSwitch";
 import { Disclosure } from "@headlessui/react";
-import { useEffect } from "react";
+
 
 const logo = "/img/Bizlink_color logo@4x/Bizlink_color logo@4x.png";
 
 
 const Navbar = () => {
   const { status, data: session } = useSession();
+  const router = useRouter();
   const navigation = [
     <Link href="/about-us" key="about-us">About Us</Link>,
     "Company",
@@ -18,12 +19,17 @@ const Navbar = () => {
 
   ];
 
-
-  useEffect(() => {
-    if (status === 'authenticated') {
-      alert('Login approved! You can explore the marketplace');
+  const handleSignIn = async () => {
+    if (status === "authenticated") {
+      alert("You are already signed in!");
+      router.push('/marketplace');
+    } else {
+      await signIn("google");
+      alert("You have been signed in!");
+      router.push('/marketplace');
     }
-  }, [status]);
+  }
+
 
   return (
     <div className="w-full">
@@ -79,7 +85,7 @@ const Navbar = () => {
                       </>
                     ) : (
                       <>
-                        <button onClick={() => signIn("google")} style={{ width: "110px", height: "40px" }} className="px-6 py-2 text-white bg-indigo-500 rounded-md md:ml-5">
+                        <button onClick={handleSignIn} style={{ width: "110px", height: "40px" }} className="px-6 py-2 text-white bg-indigo-500 rounded-md md:ml-5">
                           Log in
                         </button>
 
@@ -103,7 +109,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-          {/* {console.log(session)} */}
+
           {status === "authenticated" ? (
             <>
 
@@ -111,7 +117,7 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <button style={{ width: "120px", height: "45px" }} onClick={() => signIn("google")} className="px-6 py-2 text-white bg-indigo-500 rounded-md md:ml-5">
+              <button style={{ width: "120px", height: "45px" }} onClick={handleSignIn} className="px-6 py-2 text-white bg-indigo-500 rounded-md md:ml-5">
                 Log in
               </button>
               <ThemeChanger />

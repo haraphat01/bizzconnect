@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
+import Agreement from "../../components/agreement"
 import {
     Alert, Spin,
     AutoComplete,
@@ -46,11 +47,13 @@ const tailFormItemLayout = {
 };
 const { Title } = Typography;
 const App = () => {
-    const [alert, setAlert] = useState(false)
+    const [alert, setAlert] = useState(false);
     const [loading, setLoading] = useState(false);
     const [autoCompleteResult, setAutoCompleteResult] = useState([]);
+    const [showModal, setShowModal] = useState(false);
     const [form] = Form.useForm();
     const router = useRouter();
+    const [agreementChecked, setAgreementChecked] = useState(false);
 
 
     const onFinish = async () => {
@@ -80,6 +83,9 @@ const App = () => {
         }
     };
 
+    const onAgreementChange = (e) => {
+        setAgreementChecked(e.target.checked); // Update state when checkbox is checked
+    };
 
     const onWebsiteChange = (value) => {
         if (!value) {
@@ -331,6 +337,18 @@ const App = () => {
 
                         </Form.Item>
                         <Form.Item
+                            name="Reason for selling"
+                            label="Reason for selling"
+                            rules={[
+                                {
+                                    required: true,
+
+                                },
+                            ]}
+                        >
+                            <Input.TextArea showCount maxLength={500} placeholder="Tell us why you're selling your biz/product" />
+                        </Form.Item>
+                        <Form.Item
                             name="Years in operation"
                             label="Years in operation"
                             rules={[
@@ -438,9 +456,11 @@ const App = () => {
                             ]}
                             {...tailFormItemLayout}
                         >
-                            <Checkbox>
-                                I have read the <a href="">agreement</a>
+                            <Checkbox onChange={onAgreementChange}>
+                                I have read the agreement
+                                {agreementChecked && <Agreement />}
                             </Checkbox>
+                         
                         </Form.Item>
                         <Form.Item {...tailFormItemLayout}>
                             {loading ? (
