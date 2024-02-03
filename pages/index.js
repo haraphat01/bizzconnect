@@ -16,57 +16,57 @@ import Layout from "../components/Layout";
 const Home = () => {
   return (
     <>
-     <Layout> 
-      <Head>
-        <title>Bizzlink</title>
-        <meta
-          name="description"
-          content="Bizzlink is a dynamic online platform designed to facilitate the seamless sale of businesses."
-        />
-        <link rel="icon" href="/favicon.ico" />
-        <script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-    />
-    <script
-        dangerouslySetInnerHTML={{
-            __html: `
+      <Layout>
+        <Head>
+          <title>Bizzlink</title>
+          <meta
+            name="description"
+            content="Bizzlink is a dynamic online platform designed to facilitate the seamless sale of businesses."
+          />
+          <link rel="icon" href="/favicon.ico" />
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
             `,
-        }}
-    />
-    
-        
-      </Head>
-
-      {/* <Navbar /> */}
-
-      <Hero />
-      <SectionTitle
-        title="Recently listed business"
-      >
-      </SectionTitle>
-      <Products />
+            }}
+          />
 
 
+        </Head>
+
+        {/* <Navbar /> */}
+
+        <Hero />
+        <SectionTitle
+          title="Recently listed business"
+        >
+        </SectionTitle>
+        <Products />
 
 
-      <Benefits data={benefitOne} />
 
-      <SectionTitle
-        pretitle="Testimonials"
-        title="Customer Success Stories">
-        Discover how Bizzlink has empowered entrepreneurs and investors on their business journey. Here are inspiring stories from our users:
-      </SectionTitle>
-      <Testimonials />
-      <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
-      </SectionTitle>
-      <Faq />
-      {/* <Footer /> */}
-      <PopupWidget />
+
+        <Benefits data={benefitOne} />
+
+        {/* <SectionTitle
+          pretitle="Testimonials"
+          title="Customer Success Stories">
+          Discover how Bizzlink has empowered entrepreneurs and investors on their business journey. Here are inspiring stories from our users:
+        </SectionTitle>
+        <Testimonials /> */}
+        <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
+        </SectionTitle>
+        <Faq />
+        {/* <Footer /> */}
+        <PopupWidget />
       </Layout>
     </>
   );

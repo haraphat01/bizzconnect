@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Container from "./container";
+import bizzlink from "../public/img/bizzlink.jpg"
 
 const Benefits = (props) => {
   const { data } = props;

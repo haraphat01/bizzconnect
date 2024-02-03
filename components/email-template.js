@@ -4,13 +4,13 @@ import logo from "../public/img/Bizlink_color logo@4x/Bizlink_White_logo@4x.png"
 const EmailTemplate = ({ firstName }) => (
   <div>
     <img src={logo} className='text-center'/>
-    <h1>Hello, {firstName}! 😊 </h1>
+    <h1>Hello, {firstName} 😊 !.</h1>
     <p>Thank you for joining BizzLink. We're excited to have you on board!</p>
     <p>Keep an eye out for exciting business opportunities available for sale on our marketplace.</p>
     <p>Welcome to BizzLink, the ultimate marketplace to sell your business. We're here to help you succeed and make the most of your entrepreneurial journey. Happy Bizzling!</p>
 
     <footer>
-      <p>BizzLink Address: Ilorin, Nigeria</p>
+      
       <p>Follow us on social media:</p>
       <ul>
         <li><a href={"https://twitter.com/Bizlink_23"}>Twitter: @Bizlink_23
@@ -18,6 +18,7 @@ const EmailTemplate = ({ firstName }) => (
         <li><a href={"https://www.linkedin.com/company/bizlink24/"}>Linkedln: BizzLinkOfficial</a></li>
         <li><a href={"https://instagram.com/Bizlink23"}>Instagram: @Bizlink23</a></li>
       </ul>
+      <p>BizzLink Address: Ilorin, Nigeria</p>
     </footer>
   </div>
 );

@@ -209,7 +209,7 @@ const PopupWidget = () => {
                               message: "Paste the link to the product",
                             },
                           })}
-                          placeholder="bizzlink.com/listing/listingid"
+                          placeholder="bizzlink.com/marketplace/658047826c0d3d4b6d5e7c1c"
                           className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
                             errors.email
                               ? "border-red-600 focus:border-red-600 ring-red-100"

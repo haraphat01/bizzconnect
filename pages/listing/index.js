@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 import Agreement from "../../components/agreement"
+import moment from 'moment'
 import {
     Alert, Spin,
     AutoComplete,
@@ -61,6 +62,7 @@ const App = () => {
         const formValues = form.getFieldsValue();
         const apiUrl = '/api/listingApi';
         try {
+
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
@@ -460,7 +462,7 @@ const App = () => {
                                 I have read the agreement
                                 {agreementChecked && <Agreement />}
                             </Checkbox>
-                         
+
                         </Form.Item>
                         <Form.Item {...tailFormItemLayout}>
                             {loading ? (
@@ -472,7 +474,13 @@ const App = () => {
                                 </Button>
                             )}
                         </Form.Item>
-
+                        <Form.Item
+                            name="hiddenField"
+                            hidden
+                            initialValue={moment("20120620", "YYYYMMDD").fromNow()}
+                        >
+                            <Input />
+                        </Form.Item>
 
                     </Form>
                 </Col>

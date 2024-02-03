@@ -10,7 +10,7 @@ const DetailsPage = () => {
   const { id } = router.query;
   const fetcher = (...args) => fetch(...args).then(res => res.json())
   const { data: details, error, isLoading } = useSWR(`/api/listingApi?id=${id}`, fetcher)
-
+ 
 
   return (
 
@@ -31,18 +31,18 @@ const DetailsPage = () => {
               <p><span className="font-semibold">Monthly Revenue:</span> {details.data["Monthly Revenue"]}</p>
               <p><span className="font-semibold">Total Profit:</span> {details.data["Monthly Profit"]}</p>
               <p><span className="font-semibold">Total Revenue:</span> {details.data["Total Revenue"]}</p>
+              <p><span className="font-semibold">Number of Employees:</span> {details.data["Number of Employees"]}</p>
 
               <p className="font-semibold">Category: {details.data["category"]}</p>
             </div>
             <div className="col-span-1">
-              <p><span className="font-semibold">Email: </span>{details.data["email"]}</p>
+              <p><span className="font-semibold">Reason for selling: </span>{details.data["Reason for selling"]}</p>
               <p ><span className="font-semibold">Gender: </span>{details.data["gender"]}</p>
               <p ><span className="font-semibold">Industry: </span>{details.data["industry"]}</p>
               <p ><span className="font-semibold">Phone: </span>{details.data["phone"]}</p>
               <p><span className="font-semibold">Verified:</span> {details.data["verified"]}</p>
               <p><span className="font-semibold">Address:</span> {details.data["Your Address"]}</p>
-
-
+              <p><span className="font-semibold">Years in operation:</span> {details.data["Years in operation"]}</p>
             </div>
             <Button onClick={() => router.push('/marketplace')}>Go Back</Button>
           </div>

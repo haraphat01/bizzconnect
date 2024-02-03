@@ -1,15 +1,18 @@
+"use client"
 import React from "react";
 import { useState } from "react";
 import { useRouter } from 'next/router';
-import { Card, Carousel,Alert, Button } from 'antd';
+import { Card, Carousel, Alert, Button } from 'antd';
 import { useSession } from "next-auth/react"
-
+import { atom, useAtom } from 'jotai';
 const { Meta } = Card;
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import userTwoImg from "../public/img/user2.jpg";
 import Link from "next/link";
+import { listingResponseFromAtom } from "../pages/marketplace";
+import useSWR from 'swr';
 
-const products = [
+const productss = [
     {
         name: "Product 1",
         price: "$1000",
@@ -40,6 +43,11 @@ const products = [
 export const Products = () => {
     const { status, data: session } = useSession();
     const router = useRouter();
+    const fetcher = (...args) => fetch(...args).then(res => res.json())
+    const { data, error, isLoading } = useSWR('/api/listingApi', fetcher);
+    const [listings, setListings] = useAtom(listingResponseFromAtom);
+    setListings(data);
+    console.log("testing atomssss", listings)
     const handleExploreMarketplace = () => {
         if (status !== "authenticated") {
             alert("Please log in to explore the marketplace");
@@ -51,7 +59,7 @@ export const Products = () => {
         <div >
             <div className="flex flex-wrap justify-center ">
 
-                {products.map((product, index) => (
+                {listings.map((product, index) => (
                     <div key={index} className=" p-5">
                         <div className="">
 
