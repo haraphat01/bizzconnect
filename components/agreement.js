@@ -11,8 +11,6 @@ const App = () => {
     };
     return (
         <>
-
-
             <Modal title="Agreement" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                 <ol className="list-decimal list-inside">
                     <li className="mb-2">Accurate Information: I acknowledge that all information provided in the listing, including financial details, business history, and any supporting documents, is accurate to the best of my knowledge.</li>

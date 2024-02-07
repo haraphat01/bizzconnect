@@ -403,7 +403,7 @@ const App = () => {
                             rules={[
                                 {
                                     required: false,
-                                    message: 'Please input website!',
+                                   
                                 },
                             ]}
                         >
@@ -474,13 +474,7 @@ const App = () => {
                                 </Button>
                             )}
                         </Form.Item>
-                        <Form.Item
-                            name="hiddenField"
-                            hidden
-                            initialValue={moment("20120620", "YYYYMMDD").fromNow()}
-                        >
-                            <Input />
-                        </Form.Item>
+                       
 
                     </Form>
                 </Col>

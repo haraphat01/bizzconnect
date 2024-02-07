@@ -19,13 +19,11 @@ const Home = () => {
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
     const { data: session, status } = useSession();
-    const [dataResponse, setDataResponse] = useAtom(listingResponseFromAtom);
+    // const [listings] = useAtom(listingResponseFromAtom);
     const router = useRouter();
     const fetcher = (...args) => fetch(...args).then(res => res.json())
     const { data: listings, error, isLoading } = useSWR('/api/listingApi', fetcher)
-    console.log("testing atom 2", dataResponse)
-
-
+ 
     const filteredListings = listings && listings.filter((listing) => {
         return (
             (listing.data?.industry?.toLowerCase().includes(searchTerm.toLowerCase()) || false) ||
@@ -40,7 +38,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        setDataResponse(listings);
+       
         if (status === "authenticated") {
             // User is authenticated, allow access to the marketplace
         } else if (status === "loading") {

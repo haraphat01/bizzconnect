@@ -24,25 +24,25 @@ const DetailsPage = () => {
               <h2 className="text-2xl font-bold mb-2 text-indigo-500">Business Name: {details.data["Business Name"]}</h2>
               <p className="text-gray-500">Business Description: {details.data["Business Description"]}</p>
             </div>
-            <div className="col-span-1">
-              <p ><span className="font-semibold">Asking Price: </span>{details.data["Asking Price"]}</p>
-              <p ><span className="font-semibold">Legal Structure:</span> {details.data["Legal Structure"]}</p>
-              <p><span className="font-semibold">Monthly Profit:</span> {details.data["Monthly Profit"]}</p>
-              <p><span className="font-semibold">Monthly Revenue:</span> {details.data["Monthly Revenue"]}</p>
-              <p><span className="font-semibold">Total Profit:</span> {details.data["Monthly Profit"]}</p>
-              <p><span className="font-semibold">Total Revenue:</span> {details.data["Total Revenue"]}</p>
-              <p><span className="font-semibold">Number of Employees:</span> {details.data["Number of Employees"]}</p>
+            <div className="col-span-1 mb-5">
+              <p ><span className="font-semibold mb-2">Asking Price: </span>{details.data["Asking Price"]}</p>
+              <p ><span className="font-semibold mb-2">Legal Structure:</span> {details.data["Legal Structure"]}</p>
+              <p><span className="font-semibold mb-2">Monthly Profit:</span> {details.data["Monthly Profit"]}</p>
+              <p><span className="font-semibold mb-2">Monthly Revenue:</span> {details.data["Monthly Revenue"]}</p>
+              <p><span className="font-semibold mb-2">Total Profit:</span> {details.data["Monthly Profit"]}</p>
+              <p><span className="font-semibold mb-2">Total Revenue:</span> {details.data["Total Revenue"]}</p>
+              <p><span className="font-semibold mb-2">Number of Employees:</span> {details.data["Number of Employees"]}</p>
 
               <p className="font-semibold">Category: {details.data["category"]}</p>
             </div>
-            <div className="col-span-1">
-              <p><span className="font-semibold">Reason for selling: </span>{details.data["Reason for selling"]}</p>
-              <p ><span className="font-semibold">Gender: </span>{details.data["gender"]}</p>
-              <p ><span className="font-semibold">Industry: </span>{details.data["industry"]}</p>
-              <p ><span className="font-semibold">Phone: </span>{details.data["phone"]}</p>
-              <p><span className="font-semibold">Verified:</span> {details.data["verified"]}</p>
-              <p><span className="font-semibold">Address:</span> {details.data["Your Address"]}</p>
-              <p><span className="font-semibold">Years in operation:</span> {details.data["Years in operation"]}</p>
+            <div className="col-span-1 mb-5">
+              <p><span className="font-semibold mb-2">Reason for selling: </span>{details.data["Reason for selling"]}</p>
+              <p ><span className="font-semibold mb-2">Gender: </span>{details.data["gender"]}</p>
+              <p ><span className="font-semibold mb-2">Industry: </span>{details.data["industry"]}</p>
+              <p ><span className="font-semibold mb-2">Phone: </span>{details.data["phone"]}</p>
+              <p><span className="font-semibold mb-2">Verified:</span> {details.data["verified"]}</p>
+              <p><span className="font-semibold mb-2">Address:</span> {details.data["Your Address"]}</p>
+              <p><span className="font-semibold mb-2">Years in operation:</span> {details.data["Years in operation"]}</p>
             </div>
             <Button onClick={() => router.push('/marketplace')}>Go Back</Button>
           </div>

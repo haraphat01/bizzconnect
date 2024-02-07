@@ -12,34 +12,34 @@ import Link from "next/link";
 import { listingResponseFromAtom } from "../pages/marketplace";
 import useSWR from 'swr';
 
-const productss = [
-    {
-        name: "Product 1",
-        price: "$1000",
-        location: "New York",
-        revenue: "$5000",
-        amount: 10,
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-        name: "Product 2",
-        price: "$1500",
-        location: "San Francisco",
-        revenue: "$7000",
-        amount: 8,
-        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
-    {
-        name: "Product 2",
-        price: "$1500",
-        location: "San Francisco",
-        revenue: "$7000",
-        amount: 8,
-        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
+// const products = [
+//     {
+//         name: "Product 1",
+//         price: "$1000",
+//         location: "New York",
+//         revenue: "$5000",
+//         amount: 10,
+//         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+//     },
+//     {
+//         name: "Product 2",
+//         price: "$1500",
+//         location: "San Francisco",
+//         revenue: "$7000",
+//         amount: 8,
+//         description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+//     },
+//     {
+//         name: "Product 2",
+//         price: "$1500",
+//         location: "San Francisco",
+//         revenue: "$7000",
+//         amount: 8,
+//         description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+//     },
 
 
-];
+// ];
 export const Products = () => {
     const { status, data: session } = useSession();
     const router = useRouter();
@@ -57,9 +57,9 @@ export const Products = () => {
     };
     return (
         <div >
-            <div className="flex flex-wrap justify-center ">
+            {/* <div className="flex flex-wrap justify-center ">
 
-                {listings.map((product, index) => (
+                {products.map((product, index) => (
                     <div key={index} className=" p-5">
                         <div className="">
 
@@ -78,9 +78,9 @@ export const Products = () => {
                     </div>
                 ))}
 
-            </div>
+            </div> */}
             <div className="flex justify-center mt-4">
-                <Button className="m-5" style={{ height: "50px" }} onClick={handleExploreMarketplace}>
+                <Button className="m-5" text-lg style={{ height: "50px", fontSize: "15px" }} onClick={handleExploreMarketplace}>
                     Explore marketplace
                 </Button>
             </div>
