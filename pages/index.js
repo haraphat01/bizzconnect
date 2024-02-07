@@ -27,18 +27,20 @@ const Home = () => {
       // If it's the first visit, set the flag in local storage or cookies
       localStorage.setItem('hasVisitedBefore', true);
     }
+    
   }, []);
 
-  if (isNewUser) {
-    return (
-      <WelcomeMessage/>
-    )
+  // if (isNewUser) {
+  //   return (
+     
+  //   )
  
-  } 
+  // } 
 
 return (
 
-  <>
+  <> 
+  <WelcomeMessage/>
     <Layout>
       <Head>
         <title>Bizzlink</title>

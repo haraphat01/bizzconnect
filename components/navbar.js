@@ -24,9 +24,8 @@ const Navbar = () => {
       alert("You are already signed in!");
       router.push('/marketplace');
     } else {
-      await signIn("google");
-      alert("You have been signed in!");
-      router.push('/marketplace');
+      await signIn("google", { callbackUrl: `${window.location.origin}/marketplace` });
+      alert("You are now signed in!");
     }
   }
 
