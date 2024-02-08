@@ -11,8 +11,7 @@ import Benefits from "../components/benefits";
 import Footer from "../components/footer";
 import Testimonials from "../components/testimonials";
 import Faq from "../components/faq";
-import PopupWidget from "../components/popupWidget";
-import { Button } from "antd";
+
 import Layout from "../components/Layout";
 import WelcomeMessage from "../components/welcomeMessage";
 const Home = () => {
@@ -91,7 +90,7 @@ return (
       </SectionTitle>
       <Faq />
       {/* <Footer /> */}
-      <PopupWidget />
+    
     </Layout>
   </>
 );

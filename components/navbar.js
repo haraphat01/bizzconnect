@@ -6,7 +6,7 @@ import ThemeChanger from "./DarkSwitch";
 import { Disclosure } from "@headlessui/react";
 
 
-const logo = "/img/Bizlink_color logo@4x/Bizlink_color logo@4x.png";
+export const logo = "/img/Bizlink_color logo@4x/Bizlink_color logo@4x.png";
 
 
 const Navbar = () => {

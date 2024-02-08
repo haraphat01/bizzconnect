@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../public/img/Bizlink_Black logo@4x.png"
+import logo from "../components/navbar"
 
 const EmailTemplate = ({ firstName }) => (
   <div>

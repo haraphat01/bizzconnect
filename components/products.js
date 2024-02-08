@@ -47,7 +47,7 @@ export const Products = () => {
     const { data, error, isLoading } = useSWR('/api/listingApi', fetcher);
     const [listings, setListings] = useAtom(listingResponseFromAtom);
     setListings(data);
-    console.log("testing atomssss", listings)
+    // console.log("testing atomssss", listings)
     const handleExploreMarketplace = () => {
         if (status !== "authenticated") {
             alert("Please log in to explore the marketplace");
